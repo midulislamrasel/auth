@@ -1,8 +1,7 @@
 import bcrypt from "bcryptjs";
 import Credentials from "next-auth/providers/credentials";
-import {loginSchema} from "@/lib/validations/auth";
-import {getUserByEmail} from "@/lib/auth";
-
+import { loginSchema } from "@/lib/validations/auth";
+import { getUserByEmail } from "@/lib/auth";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {

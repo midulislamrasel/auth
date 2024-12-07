@@ -3,9 +3,10 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTransition } from "react";
-import registerAction from "@/app/actions/auth";
+// import registerAction from "@/app/actions/auth";
 import { registerSchema } from "@/lib/validations/auth";
 import { toast } from "react-toastify";
+import {registerAction} from "@/app/actions/auth";
 // ====================================
 const Page = () => {
     const [isPending, startTransition] = useTransition();
