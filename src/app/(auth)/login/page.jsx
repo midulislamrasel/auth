@@ -112,8 +112,7 @@ const Page = () => {
                         <p>
                             Don&#x27;t have an account?
                             <Link
-                                // href="signup"
-                                href={""}
+                                href="signup"
                                 className="font-semibold underline"
                             >
                                 Sign Up

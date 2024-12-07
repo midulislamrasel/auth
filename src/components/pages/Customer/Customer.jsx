@@ -1,5 +1,5 @@
 
-import {auth} from "../../../auth";
+import {auth} from "../../../../auth";
 import {getAuthUser} from "@/lib/auth";
 import {FaCalendarAlt, FaGift} from "react-icons/fa";
 import Link from "next/link";
@@ -26,7 +26,7 @@ const Customer = async () => {
                     <div className="grid gap-6 md:grid-cols-2">
                         {/* Book Now Card */}
                         <Link
-                            href="/"
+                            href="/public"
                             className="group flex flex-col items-center rounded-lg bg-teal-500 p-6 text-white transition-transform hover:scale-105"
                         >
                             <FaCalendarAlt className="mb-4 h-12 w-12" />
@@ -40,7 +40,7 @@ const Customer = async () => {
 
                         {/* Gift Cards Card */}
                         <Link
-                            href="/"
+                            href="/public"
                             className="group flex flex-col items-center rounded-lg bg-coral-500 p-6 text-white transition-transform hover:scale-105"
                             style={{ backgroundColor: "#ff6f61" }}
                         >
