@@ -4,7 +4,7 @@ import {getAuthUser} from "@/lib/auth";
 import {FaCalendarAlt, FaGift} from "react-icons/fa";
 import Link from "next/link";
 import {redirect} from "next/navigation";
-import Logout from "@/components/pages/Logout/Logout";
+import Logout from "@/components/pages/Buttton/Logout";
 
 const Customer = async () => {
     try {

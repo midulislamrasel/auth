@@ -6,7 +6,7 @@ import { useTransition } from "react";
 import { registerSchema } from "@/lib/validations/auth";
 import { toast } from "react-toastify";
 import {registerAction} from "@/actions/auth";
-import  Github from "@/components/pages/Logout/Github"
+import  Github from "@/components/pages/Buttton/Github"
 
 
 // ====================================
