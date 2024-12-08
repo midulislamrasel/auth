@@ -1,7 +1,7 @@
 "use client"
 import React, {useTransition} from 'react';
 import {LogOutIcon} from "lucide-react";
-import {logoutAction} from "@/app/actions/auth";
+import {logoutAction} from "@/actions/auth";
 import {useForm} from "react-hook-form";
 import {useSession} from "next-auth/react";
 import { toast } from "sonner";

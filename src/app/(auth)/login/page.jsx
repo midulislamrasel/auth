@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema } from "@/lib/validations/auth";
 import { toast } from "react-toastify";
-import { loginAction } from "@/app/actions/auth";
+import { loginAction } from "@/actions/auth";
 
 const Page = () => {
     const [isPending, StartTransaction] = useTransition(); //এটা দিয়ে কি কাজ হয়।

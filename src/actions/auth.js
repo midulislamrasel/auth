@@ -3,7 +3,10 @@ import {loginSchema, registerSchema} from "@/lib/validations/auth";
 import { revalidatePath } from "next/cache";
 import { AuthError } from "next-auth";
 import { createUser, getUserByEmail } from "@/lib/auth";
-import { signOut, signIn } from "../../../auth";
+import { signOut, signIn } from "../../auth";
+
+
+
 
 // =========Register Action==================
 export async function registerAction(formData, redirect = true) {
@@ -81,6 +84,33 @@ export async function loginAction(formData, redirect = true) {
         throw error;
     }
 }
+
+
+
+
+
+// =============Google==================
+export  async function loginwithGoogle(redirect = true ) {
+    try {
+        await signIn("credentials", {
+            redirect: redirect,
+            redirectTo: "/profile",
+        });
+        revalidatePath("/profile");
+    } catch (error) {
+        if (error instanceof AuthError) {
+            switch (error.type) {
+                case "CredentialsSignin":
+                    return { error: "Invalid credentials!" };
+                default:
+                    return { error: "Something went wrong!" };
+            }
+        }
+        throw error;
+    }
+}
+
+
 
 // ====================  LogOut Action  ========================
 export async function logoutAction() {

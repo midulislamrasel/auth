@@ -5,15 +5,18 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useTransition } from "react";
 import { registerSchema } from "@/lib/validations/auth";
 import { toast } from "react-toastify";
-import {registerAction} from "@/app/actions/auth";
+import {registerAction} from "@/actions/auth";
+import  Github from "@/components/pages/Logout/Github"
+
+
 // ====================================
 const Page = () => {
     const [isPending, startTransition] = useTransition();
     const form = useForm({
         resolver: zodResolver(registerSchema), // zodResolver not import
         defaultValues: {
-            email: "",
             password: "",
+            email: "",
             name: "",
         },
     });
@@ -84,7 +87,7 @@ const Page = () => {
                         </div>
                         <button
                             type="submit"
-                            className="w-full px-4 py-2 text-base font-semibold text-center text-primary-dark uppercase transition duration-200 ease-in bg-primary-yellow shadow-md hover:text-black hover:bg-white focus:outline-none focus:ring-2"
+                            className="w-full px-4 py-2 text-base font-semibold text-center text-primary-dark uppercase transition duration-200 ease-in bg-primary-yellow shadow-md text-black bg-gray-300 rounded-2xl hover:text-black hover:bg-white focus:outline-none "
                             disabled={isPending}
                         >
                             <span className="w-full">Sign Up</span>
@@ -101,6 +104,10 @@ const Page = () => {
                             </Link>
                         </p>
                     </div>
+                    <div>
+
+                        <Github/>
+                    </div>
                 </div>
             </div>
             <div className="w-1/2 shadow-2xl">
@@ -110,7 +117,9 @@ const Page = () => {
                 {/*    width={600}*/}
                 {/*    height={800}*/}
                 {/*/>*/}
+
             </div>
+
         </div>
     );
 };

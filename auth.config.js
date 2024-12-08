@@ -2,10 +2,16 @@ import bcrypt from "bcryptjs";
 import Credentials from "next-auth/providers/credentials";
 import { loginSchema } from "@/lib/validations/auth";
 import { getUserByEmail } from "@/lib/auth";
+import Google from "next-auth/providers/google"
+
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
     providers: [
+        Google({
+            clientId: process.env.AUTH_GOOGLE_ID,
+            clientSecret: process.env.AUTH_GOOGLE_SECRET,
+        }),
         Credentials({
             name: "Credentials",
             credentials: {
@@ -35,7 +41,22 @@ export default {
                 return null;
             },
         }),
+
+
     ],
+    callbacks: {
+
+            async singIn({ account, profile, error }) {
+
+                console.error("Error:", error);
+                if (account.provider === "google") {
+                    return true; // Allow sign-in
+                }
+                return false; // Deny sign-in
+            },
+
+
+    },
     pages: {
         signIn: "/login",
         error: "/error",
