@@ -1,6 +1,5 @@
 import {prisma} from "@/lib/prisma";
-
-const bcrypt = require('bcrypt');
+import bcrypt  from 'bcryptjs';
 
 
 export const getUserByEmail = async (email) => {

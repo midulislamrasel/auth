@@ -12,6 +12,7 @@ export default {
             clientId: process.env.AUTH_GOOGLE_ID,
             clientSecret: process.env.AUTH_GOOGLE_SECRET,
         }),
+
         Credentials({
             name: "Credentials",
             credentials: {
@@ -45,18 +46,15 @@ export default {
 
     ],
     callbacks: {
-
             async singIn({ account, profile, error }) {
-
                 console.error("Error:", error);
                 if (account.provider === "google") {
                     return true; // Allow sign-in
                 }
                 return false; // Deny sign-in
             },
-
-
     },
+
     pages: {
         signIn: "/login",
         error: "/error",

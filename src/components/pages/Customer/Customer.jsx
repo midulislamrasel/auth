@@ -1,4 +1,3 @@
-
 import {auth} from "../../../../auth";
 import {getAuthUser} from "@/lib/auth";
 import {FaCalendarAlt, FaGift} from "react-icons/fa";
@@ -18,10 +17,10 @@ const Customer = async () => {
             redirect("/not-found");
         }
         return (
-            <div className="min-h-screen w-[80vw] bg-gray-100 p-4 md:p-6 lg:p-8">
+            <div className="min-h-screen bg-gray-100 p-4 md:p-6 lg:p-8">
                 <main className="mx-auto max-w-4xl rounded-xl bg-white p-6 shadow-lg">
                     <h1 className="mb-8 text-center text-3xl font-semibold text-gray-600 md:text-4xl lg:text-5xl">
-                        Hi {user.name || "John Doe"}!
+                        Hi {user.name || "John Doe"}!😊
                     </h1>
 
                     <div className="mt-10 text-center text-white">
